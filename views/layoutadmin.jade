@@ -1,0 +1,144 @@
+doctype html
+html
+	head
+		if locals.title
+			title= title
+		else
+			title New Sails App
+
+		// Viewport mobile tag for sensible mobile support
+		meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+
+		//-
+			Stylesheets and Preprocessors
+			==============================
+
+			You can always bring in CSS files manually with `<link>` tags, or asynchronously
+			using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+			of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+			By default, stylesheets from your `assets/styles` folder are included
+			here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+			are supported. In production, your styles will be minified and concatenated into
+			a single file.
+
+			To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+			For example, here are a few things you could do:
+
+					+ Change the order of your CSS files
+					+ Import stylesheets from other directories
+					+ Use a different or additional preprocessor, like SASS, SCSS or Stylus
+
+		// STYLES
+		link(rel="stylesheet", href="/styles/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/styles/css/custom.css")
+		link(rel="stylesheet", href="/styles/css/dataTables.bootstrap.css")
+		link(rel="stylesheet", href="/styles/css/dataTables.responsive.css")
+		link(rel="stylesheet", href="/styles/css/font-awesome.min.css")
+		link(rel="stylesheet", href="/styles/css/metisMenu.min.css")
+		link(rel="stylesheet", href="/styles/css/morris.css")
+		link(rel="stylesheet", href="/styles/css/sb-admin-2.css")
+		// STYLES END
+
+		block styles
+
+	body
+			#wrapper
+			// Navigation
+			nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+				.navbar-header
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='index.html') SB Admin v2.0
+				// /.navbar-header
+				ul.nav.navbar-top-links.navbar-right
+					// /.dropdown
+					li.dropdown
+						a.dropdown-toggle(data-toggle='dropdown', href='#')
+							i.fa.fa-user.fa-fw
+							i.fa.fa-caret-down
+						ul.dropdown-menu.dropdown-user
+							li
+								a(href='#')
+									i.fa.fa-user.fa-fw
+									|  User Profile
+							li
+								a(href='#')
+									i.fa.fa-gear.fa-fw
+									|  Settings
+							li.divider
+							li
+								a(href='login.html')
+									i.fa.fa-sign-out.fa-fw
+									|  Logout
+						// /.dropdown-user
+					// /.dropdown
+				// /.navbar-top-links
+				.navbar-default.sidebar(role='navigation')
+					.sidebar-nav.navbar-collapse
+						ul#side-menu.nav
+							li.sidebar-search
+								.input-group.custom-search-form
+									input.form-control(type='text', placeholder='Search...')
+									span.input-group-btn
+										button.btn.btn-default(type='button')
+											i.fa.fa-search
+								// /input-group
+							li
+								a(href='index.html')
+									i.fa.fa-dashboard.fa-fw
+									|  Admin Home
+							li
+								a(href='/user/index')
+									i.fa.fa-table.fa-fw
+									|  User
+							li
+								a(href='/cate/index')
+									i.fa.fa-edit.fa-fw
+									|  Categories
+					// /.sidebar-collapse
+				// /.navbar-static-side
+		block body
+	// TEMPLATES
+	
+	// TEMPLATES END
+
+	//-
+		Client-side Javascript
+		========================
+
+		You can always bring in JS files manually with `script` tags, or asynchronously
+		on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+		take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+		By default, files in your `assets/js` folder are included here
+		automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+		CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+		and concatenated into a single file.
+
+		To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+		For example, here are a few things you could do:
+
+				+ Change the order of your scripts
+				+ Import scripts from other directories
+				+ Use a different preprocessor, like TypeScript
+
+
+	// SCRIPTS
+	script(src="/js/dependencies/sails.io.js")
+	script(src="/js/aajquery.min.js")
+	script(src="/js/ajquery.dataTables.min.js")
+	script(src="/js/bootstrap.min.js")
+	script(src="/js/dataTables.bootstrap.min.js")
+	script(src="/js/dataTables.responsive.js")
+	script(src="/js/jquery.validate.js")
+	script(src="/js/jquerycustomValidate.js")
+	script(src="/js/metisMenu.min.js")
+	script(src="/js/morris.min.js")
+	script(src="/js/raphael.min.js")
+	script(src="/js/sb-admin-2.js")
+	// SCRIPTS END
+

@@ -1,0 +1,15 @@
+extends ../layoutadmin
+block body
+	#page-wrapper
+		.row
+			.login-panel.panel.panel-default
+				.panel-heading
+					h3.panel-title Please Add New Category 
+				.panel-body
+					form(role='form' action='/cate/create' method='POST')
+						fieldset
+							.form-group
+								input.form-control(placeholder='Your Category Name', name='catename')
+							// Change this to a button or input when using this as a form
+							button.btn.btn-lg.btn-success.btn-block(href='#') create
+

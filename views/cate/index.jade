@@ -1,0 +1,32 @@
+extends ../layoutadmin
+block body
+	#page-wrapper
+		.row
+			.col-lg-12
+				h1.page-header Categories Administrator
+			// /.col-lg-12
+		// /.row
+		.row
+			.col-lg-12
+				.panel.panel-default
+					.panel-heading
+						| Categories Tables
+					// /.panel-heading
+					.panel-body
+						table#dataTables-example.table.table-striped.table-bordered.table-hover(width='100%')
+							tr
+								th ID
+								th Cate Name
+								th
+								th
+								th
+							- each cate in cates
+								tr(data-id= cate.id data-models="cate")
+									td= cate.id
+									td= cate.catename
+									td
+										a(href='/cate/show/'+cate.id class="btn btn-sn btn-primary") Show
+									td
+										a(href="/cate/edit/"+cate.id class="btn btn-sn btn-warning") Edit
+									td
+										a(href="/cate/destroy/"+cate.id class="btn btn-sn btn-danger") Delete

@@ -1,0 +1,16 @@
+extends ../layout
+block body
+	.container
+		.jumbotron
+			form#form-signin.form-signin(action='/user/create', method='POST', enctype='multipart/form-data')
+				h2.form-sign-heading Create an account
+				input.form-control(type='text', placeholder='your name', name='name')
+				input.form-control(type='text', placeholder='your job', name='job')
+				input.form-control(type='text', placeholder='your email address', name='email')
+				input#password.form-control(type='password', placeholder='password', name='password')
+				input.form-control(type='password', placeholder='password confirmation', name='confirmation')
+				input(type='file', name='uploadFile')
+				br
+				input.btn.btn-lg.btn-primary.btn-block(type='submit', value='Create Account')
+				input(type='hidden', name='_csrf', value=_csrf)
+

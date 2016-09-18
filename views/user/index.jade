@@ -1,0 +1,46 @@
+extends ../layoutadmin
+block body
+	#page-wrapper
+		.row
+			.col-lg-12
+				h1.page-header User Administrator
+			// /.col-lg-12
+		// /.row
+		.row
+			.col-lg-12
+				.panel.panel-default
+					.panel-heading
+						| User Tables
+					// /.panel-heading
+					.panel-body
+						table#dataTables-example.table.table-striped.table-bordered.table-hover(width='100%')
+							tr
+								th ID
+								th Name
+								th Email
+								th Active
+								th
+								th
+								th
+							- each user in users
+								tr(data-id=user.id data-models="user")
+									td= user.id
+									td= user.name
+									td= user.email
+									if (user.active == false) 
+										td not active
+									else
+										td active
+									td
+										a(href='/user/show/'+user.id class="btn btn-sn btn-primary") Show
+									td
+										a(href="/user/edit/"+user.id class="btn btn-sn btn-warning") Edit
+									td
+										a(href="/user/destroy/"+user.id class="btn btn-sn btn-danger") Delete
+	script.
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive: true
+			});
+		});
+

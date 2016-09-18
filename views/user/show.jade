@@ -1,0 +1,23 @@
+extends ../layoutadmin 
+block body 
+	#page-wrapper
+		.row
+			.col-lg-12
+				h1.page-header User Detail
+			// /.col-lg-12
+		// /.row
+		.row
+			.col-lg-12
+				.panel.panel-default
+					.panel-heading
+						| User Detail
+					// /.panel-heading
+					.panel-body
+						h1 Name: 
+							span=user.name 
+						h3 Job: 
+							span=user.job 
+						hr 
+						h3 Email: 
+							span=user.email 
+						a(class="btn btn-medium btn-primary" href="/user/edit/" + user.id) Edit
